@@ -34,13 +34,15 @@ public class MainWindow extends JFrame {
                     cw.openConfig();
                 }
             }
+
             @Override
             public void keyPressed(KeyEvent e) {
-                //unused
+                // unused
             }
+
             @Override
             public void keyReleased(KeyEvent e) {
-                //unused
+                // unused
             }
         });
     }
