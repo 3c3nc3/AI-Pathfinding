@@ -1,7 +1,5 @@
 package fx.display;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.Canvas;
 
 import javax.swing.JFrame;
@@ -19,32 +17,10 @@ public class MainWindow extends JFrame {
         setLocationRelativeTo(null);
 
         setup();
-
-        // pack();
         setVisible(true);
     }
 
     private void setup() {
-        add(whiteboard); 
-        addKeyListener(new KeyListener() {
-            ConfigWindow cw = ConfigWindow.getInstance();
-
-            @Override
-            public void keyTyped(KeyEvent e) {
-                if (e.getKeyChar() == 'e') {
-                    cw.openConfig();
-                }
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                // unused
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                // unused
-            }
-        });
+        add(whiteboard);
     }
 }

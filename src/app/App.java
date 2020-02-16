@@ -1,16 +1,26 @@
 package app;
 
-import fx.display.MainWindow;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.util.ArrayList;
+
+import fx.display.MainWindow;
+import main.Updateable;
 
 public class App implements Runnable {
     private boolean running = false;
 
-    MainWindow mWindow;
+    private ArrayList<Updateable> updateable = new ArrayList<>();
+
+    public MainWindow mWindow;
+    public static Keybinding keybinding = Keybinding.createInstance();
 
     private void tick() {
-
+        for (Updateable u : updateable) {
+            u.update();
+        }
+        
+        System.out.println("A = " + keybinding.getKey("e"));
     }
 
     private void render() {
@@ -21,6 +31,8 @@ public class App implements Runnable {
         } 
         bs = mWindow.whiteboard.getBufferStrategy();
         g = bs.getDrawGraphics();
+
+        g.drawRect(0, 0, 30, 30);
 
         bs.show();
         g.dispose();
@@ -58,6 +70,8 @@ public class App implements Runnable {
 
     private void start() {
         mWindow = new MainWindow("AI and Pathfinding", 540, 480);
+        mWindow.addKeyListener(keybinding);
+        updateable.add(keybinding);
         running = true;
     }
 
