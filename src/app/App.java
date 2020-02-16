@@ -1,16 +1,29 @@
 package app;
 
 import fx.display.MainWindow;
+import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
 
 public class App implements Runnable {
     private boolean running = false;
+
+    MainWindow mWindow;
 
     private void tick() {
 
     }
 
     private void render() {
+        Graphics g;
+        BufferStrategy bs;
+        if (mWindow.whiteboard.getBufferStrategy() == null) {
+            mWindow.whiteboard.createBufferStrategy(2);
+        } 
+        bs = mWindow.whiteboard.getBufferStrategy();
+        g = bs.getDrawGraphics();
 
+        bs.show();
+        g.dispose();
     }
 
     @Override
@@ -44,10 +57,11 @@ public class App implements Runnable {
     }
 
     private void start() {
-        new MainWindow("AI and Pathfinding", 540, 480);
+        mWindow = new MainWindow("AI and Pathfinding", 540, 480);
+        running = true;
     }
 
     private void close() {
-
+        
     }
 }

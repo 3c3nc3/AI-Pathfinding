@@ -25,6 +25,7 @@ public class MainWindow extends JFrame {
     }
 
     private void setup() {
+        add(whiteboard); 
         addKeyListener(new KeyListener() {
             ConfigWindow cw = ConfigWindow.getInstance();
 
