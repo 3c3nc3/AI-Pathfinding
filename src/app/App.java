@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.util.ArrayList;
 
+import fx.display.ConfigWindow;
 import fx.display.MainWindow;
 import main.Updateable;
 
@@ -13,14 +14,19 @@ public class App implements Runnable {
     private ArrayList<Updateable> updateable = new ArrayList<>();
 
     public MainWindow mWindow;
-    public static Keybinding keybinding = Keybinding.createInstance();
+    public ConfigWindow config= new ConfigWindow();
+    public static Keybinding keybinding = new Keybinding();
 
     private void tick() {
+        if (!config.getIsOpen()) {
+            mWindow.requestFocus();
+        }
+        if (keybinding.getKey("e") && !config.getIsOpen()) {
+            config.openConfig(mWindow.focus);
+        }
         for (Updateable u : updateable) {
             u.update();
         }
-        
-        System.out.println("A = " + keybinding.getKey("e"));
     }
 
     private void render() {
@@ -69,9 +75,9 @@ public class App implements Runnable {
     }
 
     private void start() {
-        mWindow = new MainWindow("AI and Pathfinding", 540, 480);
-        mWindow.addKeyListener(keybinding);
+        mWindow = new MainWindow("AI and Pathfinding", 540, 480, keybinding);
         updateable.add(keybinding);
+        updateable.add(config);
         running = true;
     }
 
