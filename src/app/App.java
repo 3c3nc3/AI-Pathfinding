@@ -11,11 +11,21 @@ import main.Updateable;
 public class App implements Runnable {
     private boolean running = false;
 
+    Graphics g;
+    BufferStrategy bs;
+
     private ArrayList<Updateable> updateable = new ArrayList<>();
 
     public MainWindow mWindow;
     public ConfigWindow config= new ConfigWindow();
     public static Keybinding keybinding = new Keybinding();
+
+    private void start() {
+        mWindow = new MainWindow("AI and Pathfinding", 540, 480, keybinding);
+        updateable.add(keybinding);
+        updateable.add(config);
+        running = true;
+    }
 
     private void tick() {
         if (!config.getIsOpen()) {
@@ -30,15 +40,17 @@ public class App implements Runnable {
     }
 
     private void render() {
-        Graphics g;
-        BufferStrategy bs;
         if (mWindow.whiteboard.getBufferStrategy() == null) {
-            mWindow.whiteboard.createBufferStrategy(2);
+            mWindow.whiteboard.createBufferStrategy(3);
         } 
         bs = mWindow.whiteboard.getBufferStrategy();
         g = bs.getDrawGraphics();
 
         g.drawRect(0, 0, 30, 30);
+
+        for (Updateable u : updateable) {
+            u.update();
+        }
 
         bs.show();
         g.dispose();
@@ -71,17 +83,10 @@ public class App implements Runnable {
                 // updates = 0;
             }
         }
-        close();
+        stop();
     }
 
-    private void start() {
-        mWindow = new MainWindow("AI and Pathfinding", 540, 480, keybinding);
-        updateable.add(keybinding);
-        updateable.add(config);
-        running = true;
-    }
-
-    private void close() {
+    private void stop() {
         
     }
 }
