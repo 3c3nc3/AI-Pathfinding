@@ -13,16 +13,19 @@ Not:
         1. Player Control Mode
         2. Amount of Sprites (May not be enabled)
 
+    - Keybindings
+        - Add special Keys
+
     - Abstract class/interface for the AI/Pathfinding
 
 Done:
     - Config Window
         1. Popup
 
-    - Keylisteners
+    - Keybindings
         1. Letters
         2. Numbers
         3. Arrow Keys
-        
+
     - Main window 
         1. Canvas
