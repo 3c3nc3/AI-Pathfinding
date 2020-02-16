@@ -21,11 +21,11 @@ public class App implements Runnable {
         if (!config.getIsOpen()) {
             mWindow.requestFocus();
         }
-        if (keybinding.getKey("e") && !config.getIsOpen()) {
-            config.openConfig(mWindow.focus);
-        }
         for (Updateable u : updateable) {
             u.update();
+        }
+        if (keybinding.getKey("e") && !config.getIsOpen()) {
+            config.openConfig(mWindow.focus);
         }
     }
 
