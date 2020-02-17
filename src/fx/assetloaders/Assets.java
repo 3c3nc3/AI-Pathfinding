@@ -16,9 +16,11 @@ public class Assets {
         return kInstance;
     }
 
+    public BufferedImage getTexture(String name) {
+        return textures.get(name);
+    }
+
     private Assets() {
-        textures.put("player-mouse", ImageLoader.loadImage(""));
-        textures.put("player-keyboard", ImageLoader.loadImage(""));
-        textures.put("player-auto", ImageLoader.loadImage(""));
+        textures.put("player", ImageLoader.loadImage("/textures/player.png/"));
     }
 }

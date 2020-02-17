@@ -1,8 +1,6 @@
 Not:
     - Asset Loaders
-        1. Spritesheet + Autocrop
-        2. ImageLoader
-        3. AudioLoader
+        1. AudioLoader
 
     - Player/Target
         1. Player controlled by mouse
@@ -29,3 +27,7 @@ Done:
 
     - Main window 
         1. Canvas
+
+    - Asset Loaders
+        1. Spritesheet + Autocrop
+        2. ImageLoader

@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.util.ArrayList;
 
+import fx.assetloaders.Assets;
 import fx.display.ConfigWindow;
 import fx.display.MainWindow;
 import main.Updateable;
@@ -16,12 +17,14 @@ public class App implements Runnable {
 
     private ArrayList<Updateable> updateable = new ArrayList<>();
 
+    private Assets assets;
     public MainWindow mWindow;
     public ConfigWindow config= new ConfigWindow();
     public static Keybinding keybinding = new Keybinding();
 
     private void start() {
         mWindow = new MainWindow("AI and Pathfinding", 540, 480, keybinding);
+        assets = Assets.getInstance();
         updateable.add(keybinding);
         updateable.add(config);
         running = true;
@@ -41,12 +44,12 @@ public class App implements Runnable {
 
     private void render() {
         if (mWindow.whiteboard.getBufferStrategy() == null) {
-            mWindow.whiteboard.createBufferStrategy(3);
+            mWindow.whiteboard.createBufferStrategy(2);
         } 
         bs = mWindow.whiteboard.getBufferStrategy();
         g = bs.getDrawGraphics();
 
-        g.drawRect(0, 0, 30, 30);
+        g.drawImage(assets.getTexture("player"), 0, 0, null);
 
         for (Updateable u : updateable) {
             u.update();
