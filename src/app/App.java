@@ -22,9 +22,10 @@ public class App implements Runnable {
     public MainWindow mWindow;
     public ConfigWindow config = new ConfigWindow();
     public static Keybinding keybinding = Keybinding.getInstance();
+    public static Mousebinding mousebinding = Mousebinding.getInstance();
 
     private void start() {
-        mWindow = new MainWindow("AI and Pathfinding", 540, 480, keybinding);
+        mWindow = new MainWindow("AI and Pathfinding", 540, 480, keybinding, mousebinding);
         updateable.add(keybinding);
         updateable.add(config);
         updateable.add(player);

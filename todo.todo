@@ -3,9 +3,7 @@ Not:
         1. AudioLoader
 
     - Player/Target
-        1. Player controlled by keyboard
-        2. Player controlled by mouse
-        3. Player controlled by AI
+        1. Player controlled by AI
 
     - Config window
         1. Player Control Mode
@@ -31,3 +29,6 @@ Done:
     - Asset Loaders
         1. Spritesheet + Autocrop
         2. ImageLoader
+    - Player/Target
+        1. Player controlled by keyboard
+        2. Player controlled by mouse
