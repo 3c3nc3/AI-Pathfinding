@@ -8,10 +8,18 @@ import java.util.HashMap;
 import main.Updateable;
 
 public class Keybinding implements KeyListener, Updateable {
+    private static Keybinding kInstance;
 
     private static boolean keys[] = new boolean[256];
 
     private static HashMap<String, Boolean> keyValue = new HashMap<>();
+
+    public static Keybinding getInstance() {
+        if (kInstance == null) {
+            kInstance = new Keybinding();
+        }
+        return kInstance;
+    }
 
     public boolean getKey(String key) {
         try {
@@ -22,7 +30,7 @@ public class Keybinding implements KeyListener, Updateable {
         }
     }
 
-    public Keybinding() {
+    private Keybinding() {
         keyValue.put("a", true);
         keyValue.put("b", false);
         keyValue.put("c", false);
