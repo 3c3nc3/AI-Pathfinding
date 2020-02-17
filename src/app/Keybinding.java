@@ -123,13 +123,11 @@ public class Keybinding implements KeyListener, Updateable {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println("Key Pressed Generated");
         keys[e.getKeyCode()] = true;
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        System.out.println("Key Released Generated");
         keys[e.getKeyCode()] = false;
     }
 
