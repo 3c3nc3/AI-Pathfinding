@@ -6,8 +6,7 @@ Not:
         1. Player controlled by AI
 
     - Config window
-        1. Make layouts and a Save & close button
-        2. Amount of Sprites (May not be enabled)
+        1. Amount of Sprites (May not be enabled)
 
     - Keybindings
         - Add special Keys
@@ -16,7 +15,6 @@ Not:
 
     - Display
         1. Animations
-        2. Random Background (Ex)
 
     - Assets
         1. Animations, for player and Dots
@@ -27,6 +25,7 @@ Done:
     - Config Window
         1. Popup
         2. Player Control Mode
+        3. Make layouts and a Save & close button
 
     - Keybindings
         1. Letters
@@ -45,3 +44,6 @@ Done:
     - Player/Target
         1. Player controlled by keyboard
         2. Player controlled by mouse
+
+    - Display
+        1. Random Background (Ex) 
