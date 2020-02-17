@@ -8,8 +8,11 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import fx.assetloaders.Assets;
+
 public class MainWindow extends JFrame {
     private static final long serialVersionUID = 1L;
+    private Assets assets = Assets.getInstance();
 
     private static int width, height;
     public Canvas whiteboard = new Canvas();
@@ -27,6 +30,7 @@ public class MainWindow extends JFrame {
         MainWindow.width = width;
         MainWindow.height = height;
         setup();
+        setIconImage(assets.getTexture("icon"));
         setVisible(true);
     }
 

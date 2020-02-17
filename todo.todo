@@ -12,13 +12,16 @@ Not:
     - Keybindings
         - Add special Keys
 
-    - Abstract class/interface for the AI/Pathfinding
+    - AI/Pathfinding
+
+    - Display
+        1. Animations
+        2. Random Background (Ex)
 
     - Assets
-        1. "Dot" textures
+        1. Animations, for player and Dots
         2. Sound Effects
-        3. Background
-        4. App Icon
+        3. Random Background Textures (UNDERWAY)
 
 Done:
     - Config Window
@@ -36,6 +39,8 @@ Done:
     - Asset Loaders
         1. Spritesheet + Autocrop
         2. ImageLoader
+        3. "Dot" textures  
+        4. App Icon
 
     - Player/Target
         1. Player controlled by keyboard

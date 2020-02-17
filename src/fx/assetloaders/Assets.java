@@ -21,6 +21,11 @@ public class Assets {
     }
 
     private Assets() {
-        textures.put("player", ImageLoader.loadImage("/textures/player.png/"));
+        textures.put("icon", ImageLoader.loadImage("/textures/icon.png/"));
+
+        textures.put("player", ImageLoader.loadImage("/textures/entitys/player.png/"));
+        textures.put("bad-dot", ImageLoader.loadImage("/textures/entitys/badDot.png/"));
+        
+        textures.put("background 1", ImageLoader.loadImage("/textures/background/background-tile1.png/"));
     }
 }
