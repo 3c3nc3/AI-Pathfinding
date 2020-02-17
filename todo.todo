@@ -3,8 +3,8 @@ Not:
         1. AudioLoader
 
     - Player/Target
-        1. Player controlled by mouse
-        2. Player controlled by keyboard
+        1. Player controlled by keyboard
+        2. Player controlled by mouse
         3. Player controlled by AI
 
     - Config window
