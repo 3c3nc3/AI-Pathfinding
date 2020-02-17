@@ -10,11 +10,13 @@ import javax.swing.JFrame;
 
 import components.Player;
 import components.Player.ControlMode;
+import fx.assetloaders.Assets;
 import main.Updateable;
 
 public class ConfigWindow extends JFrame implements Updateable {
     private static final long serialVersionUID = 1L;
 
+    private Assets assets = Assets.getInstance();
     private static ConfigWindow kInstance;
     private static boolean isOpen = false;
 
@@ -25,6 +27,7 @@ public class ConfigWindow extends JFrame implements Updateable {
         super("Configure");
         setSize(300, 400);
         setResizable(false);
+        setIconImage(assets.getTexture("icon"));
         setComponents();
     }
 
