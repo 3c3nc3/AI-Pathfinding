@@ -14,6 +14,12 @@ Not:
 
     - Abstract class/interface for the AI/Pathfinding
 
+    - Assets
+        1. "Dot" textures
+        2. Sound Effects
+        3. Background
+        4. App Icon
+
 Done:
     - Config Window
         1. Popup
