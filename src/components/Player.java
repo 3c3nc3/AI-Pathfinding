@@ -31,6 +31,17 @@ public class Player implements Updateable {
         if (keybinding.getKey("right")) {
             point.x = point.x + playerSpeed;
         }
+        if (point.x < 0) {
+            point.x = 0;
+        } else if (point.x > 492) {
+            point.x = 492;
+        }
+
+        if (point.y < 0) {
+            point.y = 0;
+        } else if (point.y > 409) {
+            point.y = 409;
+        }
     }
 
     @Override
