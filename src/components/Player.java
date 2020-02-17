@@ -11,11 +11,11 @@ import main.Updateable;
 public class Player implements Updateable {
 
     private Keybinding keybinding = Keybinding.getInstance();
-    private Mousebinding mousebinding = Mousebinding.getInstance();
+    private static Mousebinding mousebinding = Mousebinding.getInstance();
     private Assets assets = Assets.getInstance();
 
-    private Point point = new Point(((540 / 2) - 32), ((480 / 2) - 32));;
-    private ControlMode controlMode = ControlMode.Mouse;
+    private static Point point = new Point(((540 / 2) - 32), ((480 / 2) - 32));;
+    private static ControlMode controlMode = ControlMode.Keyboard;
 
 
     public int playerSpeed = 3;
@@ -34,7 +34,7 @@ public class Player implements Updateable {
                 autonControl();
                 break;
         }
-        
+
         if (point.x < 0) {
             point.x = 0;
         } else if (point.x > 492) {
@@ -75,6 +75,13 @@ public class Player implements Updateable {
 
     private void autonControl() {
         System.err.println("No auton controls yet... Check back later!");
+    }
+
+    public static void setControlMode(ControlMode cm) {
+        if (cm == ControlMode.Mouse) {
+            mousebinding.mousePoint.setPoint(point.x, point.y);
+        }
+        controlMode = cm; 
     }
 
     public enum ControlMode {

@@ -6,7 +6,7 @@ Not:
         1. Player controlled by AI
 
     - Config window
-        1. Player Control Mode
+        1. Make layouts and a Save & close button
         2. Amount of Sprites (May not be enabled)
 
     - Keybindings
@@ -17,6 +17,7 @@ Not:
 Done:
     - Config Window
         1. Popup
+        2. Player Control Mode
 
     - Keybindings
         1. Letters
@@ -29,6 +30,7 @@ Done:
     - Asset Loaders
         1. Spritesheet + Autocrop
         2. ImageLoader
+
     - Player/Target
         1. Player controlled by keyboard
         2. Player controlled by mouse
