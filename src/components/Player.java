@@ -79,7 +79,7 @@ public class Player implements Updateable {
 
     public static void setControlMode(ControlMode cm) {
         if (cm == ControlMode.Mouse) {
-            mousebinding.mousePoint.setPoint(point.x, point.y);
+            mousebinding.mousePoint.setPoint(point.x + 16, point.y + 16);
         }
         controlMode = cm; 
     }
